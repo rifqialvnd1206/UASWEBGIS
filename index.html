@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebGIS Gunung Bandung</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <h1>Eksplorasi Geografi Bandung Raya</h1>
+    <nav>
+      <a href="#" onclick="showPage('hero')">Halaman Utama</a>
+      <a href="#" onclick="showPage('peta')">Peta Interaktif</a>
+      <a href="#" onclick="showPage('jelajahi')">Jelajahi</a>
+      <a href="#" onclick="showPage('pembuat')">Profil Pembuat</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="page active">
+      <div class="hero-content">
+        <p>
+          Website ini dibuat sebagai sarana eksplorasi geografis untuk menyajikan informasi spasial mengenai gunung-gunung yang tersebar di wilayah Bandung Raya. Melalui peta interaktif dan data deskriptif, pengunjung dapat mencari dan mengetahui berbagai informasi penting seperti letak geografis, ketinggian, serta karakteristik masing-masing gunung. <br><br>
+          Tujuan utama dari situs ini adalah memberikan insight bagi siapa pun yang tertarik terhadap geografi fisik kawasan Bandung Raya — baik untuk keperluan pendidikan, penelitian, pendakian, maupun sekadar rasa ingin tahu. <br><br>
+          Situs ini sangat cocok digunakan oleh mahasiswa, peneliti, pendaki gunung, guru, ataupun masyarakat umum yang ingin mengeksplorasi potensi alam pegunungan Bandung secara visual dan informatif. Dengan pendekatan berbasis WebGIS, pengguna dapat menjelajahi informasi secara lebih interaktif dan mudah dipahami. <br><br>
+          Harapannya, platform ini dapat menjadi jembatan antara ilmu pengetahuan dan rasa ingin tahu yang tinggi, sekaligus mendukung pemahaman dan apresiasi masyarakat terhadap kekayaan alam yang ada di Bandung Raya.
+        </p>
+      </div>
+    </section>    
+
+    <section id="peta" class="page">
+      <div class="map-intro">
+        <p>Informasi Spasial Gunung-gunung Bandung Raya</p>
+      </div>
+      <div id="map"></div>
+    </section>
+
+    <section id="jelajahi" class="page">
+      <div class="gallery">
+        <div class="card">
+          <img src="asset/tangkubanparahu.jpg">
+          <p><strong>Gunung Tangkuban Parahu (2.084 mdpl)</strong></p>
+          <p class="deskripsi">Gunung aktif ikonik di Lembang yang dikenal dari legenda Sangkuriang.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/burangrang.jpg">
+          <p><strong>Gunung Burangrang (2.064 mdpl)</strong></p>
+          <p class="deskripsi">Gunung di barat Lembang, terkenal dengan hutan dan jalur pendakiannya.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/manglayang.jpg">
+          <p><strong>Gunung Manglayang (1.818 mdpl)</strong></p>
+          <p class="deskripsi">Gunung yang membentang antara Bandung dan Sumedang, cocok untuk hiking.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/palasari.jpg">
+          <p><strong>Gunung Palasari (1.728 mdpl)</strong></p>
+          <p class="deskripsi">Gunung kecil dekat Cimahi Utara, populer di kalangan warga lokal.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/malabar.jpg">
+          <p><strong>Gunung Malabar (2.343 mdpl)</strong></p>
+          <p class="deskripsi">Gunung selatan Bandung yang dikenal dengan hutan lebat dan situs radio tua.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/puntang.jpg">
+          <p><strong>Gunung Puntang (~2.223 mdpl)</strong></p>
+          <p class="deskripsi">Menyimpan sejarah kolonial dengan reruntuhan stasiun radio Belanda.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/patuha.jpg">
+          <p><strong>Gunung Patuha (2.434 mdpl)</strong></p>
+          <p class="deskripsi">Gunung dengan Kawah Putih di Ciwidey, salah satu destinasi vulkanik terkenal.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/tilu.jpg">
+          <p><strong>Gunung Tilu (~1.840 mdpl)</strong></p>
+          <p class="deskripsi">Gunung sunyi di selatan Bandung, cocok untuk tracking ringan.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/rakutak.jpg">
+          <p><strong>Gunung Rakutak (1.925 mdpl)</strong></p>
+          <p class="deskripsi">Gunung di daerah Ciparay dengan jalur tersembunyi dan nuansa asri.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/wayang.jpg">
+          <p><strong>Gunung Wayang (2.182 mdpl)</strong></p>
+          <p class="deskripsi">Gunung dekat Kamojang, memiliki dua puncak dan fenomena geotermal.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/windu.jpg">
+          <p><strong>Gunung Windu (2.095 mdpl)</strong></p>
+          <p class="deskripsi">Gunung hijau bersebelahan dengan Wayang, jarang dijamah wisatawan.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/bukittunggul.jpg">
+          <p><strong>Gunung Bukit Tunggul (~2.200 mdpl)</strong></p>
+          <p class="deskripsi">Sisa gunung purba di kawasan timur laut Bandung, puncaknya dingin dan tenang.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/hawu.jpg">
+          <p><strong>Gunung Hawu (~1.200 mdpl)</strong></p>
+          <p class="deskripsi">Gunung karst unik di Padalarang, terkenal dengan 'jendela alami' tebingnya.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      
+        <div class="card">
+          <img src="asset/batu.jpg">
+          <p><strong>Gunung Batu (~1.228 mdpl)</strong></p>
+          <p class="deskripsi">Gunung kecil di Lembang yang menyajikan pemandangan bebatuan vulkanik.</p>
+          <a href="#">Lihat Detail</a>
+        </div>
+      </div>          
+    </section>
+
+    <section id="pembuat" class="page">
+      <div class="profil-container">
+        <img class="profil-foto" src="asset/profil.png" alt="Foto Profil" />
+        <h2>Rifqi Alviandi</h2>
+        <p class="judul">Sains Informasi Geografi | JANTERA UPI Geografi | SCALE </p>
+
+        <div class="sosial-icon">
+          <a href="https://www.linkedin.com/in/rifqi-alviandi-ab734a272/" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:rifqialvnd@upi.edu" class="icon email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/6287738996689" target="_blank" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/rifqialvnd/" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+        </div>        
+
+        <div class="tentang">
+          <h3>PERKENALAN</h3>
+          <h2>Tentang Saya</h2>
+          <p>
+            Saya adalah mahasiswa S1 di Universitas Pendidikan Indonesia (UPI) jurusan Sains Informasi Geografi (SaIG).
+            Fokus studi saya meliputi <strong>penginderaan jauh</strong>, <strong>kartografi</strong>, <strong>sistem informasi geografi</strong> dan <strong>survey pemetaan wilayah</strong> 
+            dengan keahlian dalam pengolahan data spasial menggunakan software GIS seperti QGIS dan ArcGIS.
+          </p>
+        </div>
+
+        <div class="tag-list">
+          <span>GIS & Mapping</span>
+          <span>Remote Sensing</span>
+          <span>Photogrammetry</span>
+          <span>Spatial Analysis</span>
+          <span>Cartography</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
